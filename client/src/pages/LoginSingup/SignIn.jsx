@@ -17,7 +17,7 @@ const Signin = () => {
     console.log(user);
 
     try {
-      const response = await axios.post(`http://localhost:5000/login`, user, {
+      const response = await axios.post(`http://localhost:5003/login`, user, {
         withCredentials: true,
       });
 
@@ -100,7 +100,7 @@ const Signin = () => {
     //             <input
     //               type="text"
     //               name="username"
-    //               class="login-input"
+    //               className="login-input"
     //               placeholder="Username"
     //               onChange={(e) => handleInputs(e)}
     //             />
@@ -108,7 +108,7 @@ const Signin = () => {
     //           <div class="login-field ">
     //             <input
     //               type="password"
-    //               class="login-input"
+    //               className="login-input"
     //               placeholder="Password"
     //               name="password"
     //               onChange={(e) => handleInputs(e)}
@@ -133,25 +133,25 @@ const Signin = () => {
 
     <div className="login-top">
       <div className="login-inner-top-left">
-        <div className="login-title">bookWise</div>
-        <div className="login-title-below">Loginn To Your Account</div>
+        <div className="login-title">Library Management System</div>
+        <div className="login-title-below">Login To Your Account</div>
         <div className="login-signup-call">
           Dont Have Account ? <a href="/signup">SignUp</a>
         </div>
         <div className="login-form">
-          <div class="login-field">
+          <div className="login-field">
             <input
               type="text"
               name="username"
-              class="login-input"
+              className="login-input"
               placeholder="Email"
               onChange={(e) => handleInputs(e)}
             />
           </div>
-          <div class="login-field ">
+          <div className="login-field ">
             <input
               type="password"
-              class="login-input"
+              className="login-input"
               placeholder="Password"
               name="password"
               onChange={(e) => handleInputs(e)}
@@ -170,14 +170,7 @@ const Signin = () => {
         </div>
       </div>
       <div className="login-inner-top-right">
-        <div>
-          <img
-            className="login-img"
-            src="https://raw.githubusercontent.com/AnuragRoshan/images/7bba2de48484241154721a9ac693a753e3927570/undraw_notebook_re_id0r.svg"
-            alt=""
-            srcset=""
-          />
-        </div>
+        {/* Illustration image removed as requested */}
       </div>
     </div>
   );

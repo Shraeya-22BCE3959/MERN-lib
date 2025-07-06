@@ -20,7 +20,7 @@ const EditProfile = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/userDetail/${id}`
+          `http://localhost:5003/userDetail/${id}`
         );
         setUser(response.data);
         setData({
@@ -44,7 +44,7 @@ const EditProfile = () => {
 
   const submitForm = async () => {
     try {
-      await axios.post(`http://localhost:5000/updateUser`, data);
+      await axios.post(`http://localhost:5003/updateUser`, data);
       toast.success("Profile updated successfully", {
         position: "top-center",
         autoClose: 2000,
@@ -113,7 +113,7 @@ const EditProfile = () => {
                 style={{ width: "15rem" }}
                 src="https://api.multiavatar.com/Starcrasher.png?apikey=dIwKHchoCn6x9k"
                 alt=""
-                srcset=""
+                srcSet=""
               />
             </div>
             <div
@@ -215,8 +215,8 @@ const EditProfile = () => {
             <div
               style={{
                 margin: "1rem",
-                backgroundColor: "white",
-                borderRadius: "2rem",
+                backgroundColor: "#e3f2fd",
+                borderRadius: 0,
                 boxShadow: "1px 1px 21px -3px rgba(0,0,0,10.75)",
               }}
             >
@@ -242,7 +242,7 @@ const EditProfile = () => {
                 <input
                   style={{ width: "60%" }}
                   type="text"
-                  class="login-input"
+                  className="login-input"
                   name="name"
                   placeholder="Name"
                   defaultValue={user.name}
@@ -259,7 +259,7 @@ const EditProfile = () => {
                 <input
                   style={{ width: "60%" }}
                   type="email"
-                  class="login-input"
+                  className="login-input"
                   name="username"
                   placeholder="Email"
                   defaultValue={user.username}
@@ -276,7 +276,7 @@ const EditProfile = () => {
                 <input
                   style={{ width: "30%" }}
                   type="number"
-                  class="login-input"
+                  className="login-input"
                   name="phone"
                   defaultValue={user.phone}
                   placeholder="Phone"
@@ -293,7 +293,7 @@ const EditProfile = () => {
                 <input
                   style={{ width: "90%" }}
                   type="text"
-                  class="login-input"
+                  className="login-input"
                   name="address"
                   placeholder="Address"
                   defaultValue={user.address}

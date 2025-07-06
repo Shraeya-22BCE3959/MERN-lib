@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const recentActivitySchema = mongoose.Schema(
     {
         isbn: {
-            type: "String",
+            type: String,
             required: true,
         },
         username: {
-            type: "String",
+            type: String,
             required: true,
         },
         activityType: {

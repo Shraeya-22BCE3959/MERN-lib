@@ -1,4 +1,6 @@
-const router = require("express").Router();
+const express = require('express');
+const axios = require('axios');
+const router = express.Router();
 
 
 const userController = require("../controller/userAPI");
@@ -26,7 +28,20 @@ router.get("/filter/:genre/:year/:title", bookController.filter);
 router.get("/booksInCart/:username", bookController.booksInCart);
 router.get("/borrowedBooks", bookController.borrowedBooks);
 
-
+// Proxy avatar route
+router.get('/avatar/:name', async (req, res) => {
+  try {
+    const response = await axios.get(
+      `https://api.multiavatar.com/${req.params.name}.png?apikey=dIwKHchoCn6x9k`,
+      { responseType: 'arraybuffer' }
+    );
+    res.set('Content-Type', 'image/png');
+    res.send(response.data);
+  } catch (error) {
+    console.error(error); // <--- This will help you debug!
+    res.status(500).send('Error fetching avatar');
+  }
+});
 
 
 module.exports = router;

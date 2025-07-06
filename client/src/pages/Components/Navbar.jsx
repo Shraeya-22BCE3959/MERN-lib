@@ -27,7 +27,7 @@ const Navbar = ({ user }) => {
 
   const handleLogout = async () => {
     await axios
-      .post(`http://localhost:5000/logout`, null, {
+      .post(`http://localhost:5003/logout`, null, {
         withCredentials: true,
       })
       .then((response) => {
@@ -77,7 +77,7 @@ const Navbar = ({ user }) => {
                 cursor: "pointer",
               }}
             >
-              bookWise
+              LMS
             </div>
           </div>
           <div className="nav-inner-element">

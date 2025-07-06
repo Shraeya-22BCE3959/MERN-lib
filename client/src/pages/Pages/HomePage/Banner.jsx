@@ -4,9 +4,9 @@ const Banner = ({ user }) => {
   return (
     <div className="home-banner">
       {user.userType == "user" ? (
-        <>Books Available In Our Inventory</>
+        <>Available Books</>
       ) : (
-        <>List Of Active Members Of Library</>
+        <>Active Members</>
       )}
     </div>
   );

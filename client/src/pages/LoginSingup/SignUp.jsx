@@ -112,7 +112,7 @@ const SignUp = () => {
   const submitForm = async () => {
     // alert("Submitted")
     await axios
-      .post(`http://localhost:5000/register`, user)
+      .post(`http://localhost:5003/register`, user)
       .then((response) => {
         var message = response.data.msg;
         var status = response.status;
@@ -152,46 +152,46 @@ const SignUp = () => {
         className="login-inner-top-left"
         style={{ padding: "3rem 3rem 3rem 3rem" }}
       >
-        <div className="login-title">bookWise</div>
+        <div className="login-title">Library Management System</div>
         <div className="login-title-below">Register Your Account</div>
         <div className="login-signup-call">
           Already Have Account ? <a href="/signin">SignIn</a>
         </div>
         <div className="login-form">
-          <div class="login-field">
-            <i class="login-icon fas fa-user"> </i>
+          <div className="login-field">
+            <i className="login-icon fas fa-user"> </i>
             <input
               type="text"
-              class="login-input"
+              className="login-input"
               name="name"
               placeholder="Your Name"
               onChange={(e) => handleInputs(e)}
             />
           </div>
-          <div class="login-field">
-            <i class="login-icon fas fa-user"> </i>
+          <div className="login-field">
+            <i className="login-icon fas fa-user"> </i>
             <input
               name="username"
               type="text"
-              class="login-input"
+              className="login-input"
               placeholder="Email"
               onChange={(e) => handleInputs(e)}
             />
           </div>
-          <div class="login-field">
-            <i class="login-icon fas fa-user"> </i>
+          <div className="login-field">
+            <i className="login-icon fas fa-user"> </i>
             <input
               type="text"
-              class="login-input"
+              className="login-input"
               name="phone"
               placeholder="Your Phone Number"
               onChange={(e) => handleInputs(e)}
             />
           </div>
-          <div class="login-field ">
+          <div className="login-field ">
             <input
               type="password"
-              class="login-input"
+              className="login-input"
               placeholder="Password"
               name="password"
               onChange={(e) => handleInputs(e)}
@@ -215,7 +215,7 @@ const SignUp = () => {
             className="login-img"
             src="https://raw.githubusercontent.com/AnuragRoshan/images/a74c41aa0efd44c9239abed96d88a5ffd11ffe7f/undraw_friendship_mni7.svg"
             alt=""
-            srcset=""
+            srcSet=""
           />
         </div>
       </div>

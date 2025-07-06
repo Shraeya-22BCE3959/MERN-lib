@@ -17,7 +17,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:5000/logedinuser/`, { withCredentials: true });
+      const { data } = await axios.get(`http://localhost:5003/logedinuser/`, { withCredentials: true });
       setUser(data.user);
     } catch (error) {
       // Handle error

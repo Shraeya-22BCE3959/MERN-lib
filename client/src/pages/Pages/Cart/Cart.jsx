@@ -9,7 +9,7 @@ const Cart = ({ user }) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/booksInCart/${user.username}`
+        `http://localhost:5003/booksInCart/${user.username}`
       );
       setData(response.data.books);
       console.log(data);
@@ -23,7 +23,7 @@ const Cart = ({ user }) => {
     const username = user.username;
     const send = { username: username };
     await axios
-      .post(`http://localhost:5000/checkout`, send)
+      .post(`http://localhost:5003/checkout`, send)
       .then((response) => {
         console.log(response);
       });
@@ -57,7 +57,7 @@ const Cart = ({ user }) => {
                   }}
                   src="https://raw.githubusercontent.com/AnuragRoshan/images/2da16323d0b50258ee4a9f8ffe0ec96bf73ed0b9/undraw_happy_music_g6wc.svg"
                   alt=""
-                  srcset=""
+                  srcSet=""
                 />
                 <div
                   style={{
@@ -98,7 +98,7 @@ const Cart = ({ user }) => {
                           <img
                             src="https://covers.openlibrary.org/b/isbn/1933988746-L.jpg"
                             alt=""
-                            srcset=""
+                            srcSet=""
                             style={{
                               width: "5rem",
                               height: "6rem",
@@ -130,7 +130,7 @@ const Cart = ({ user }) => {
               style={{ height: "86vh" }}
               src="https://raw.githubusercontent.com/AnuragRoshan/images/8b58d063ae66f90faefec23c75fe787161fc66ca/undraw_empty_cart_co35.svg"
               alt=""
-              srcset=""
+              srcSet=""
             />
           </div>
         </div>

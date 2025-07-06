@@ -15,7 +15,7 @@ const AllMember = ({ user }) => {
     const send = { books: books, username: username };
     console.log(send);
     await axios
-      .post(`http://localhost:5000/addToCart`, send, {})
+      .post(`http://localhost:5003/addToCart`, send, {})
       .then((response) => {
         console.log(response);
       });
@@ -27,7 +27,7 @@ const AllMember = ({ user }) => {
 
   const fetchData = async () => {
     // setInterval(async () => {
-    const response = await axios.get("http://localhost:5000/allUser");
+    const response = await axios.get("http://localhost:5003/allUser");
     setData(response.data);
     // }, 1500);
   };
@@ -82,6 +82,7 @@ const AllMember = ({ user }) => {
         margin: "1rem",
         borderRadius: "1.5rem",
         padding: "0.5rem",
+        backgroundColor: "#e3f2fd" // baby blue
       }}
     >
       {data.length > 0 ? (
@@ -97,7 +98,7 @@ const AllMember = ({ user }) => {
               }}
               src="https://raw.githubusercontent.com/AnuragRoshan/images/3847f7937af6b50213195fa6db1a49f5e3194e21/undraw_team_page_re_cffb.svg"
               alt=""
-              srcset=""
+              srcSet=""
             /> */}
           </div>
 
@@ -119,12 +120,11 @@ const AllMember = ({ user }) => {
               </thead>
               <tbody>
                 {record.map((d, i) => (
-                  <tr>
+                  <tr key={d.uniqueId || i}>
                     <td style={{}}>{(currentPage - 1) * 10 + i + 1}</td>
                     <td
                       style={{ cursor: "pointer", padding: "0.5rem" }}
                       onClick={() => handleBookClick(d.uniqueId)}
-                      key={i}
                     >
                       {d.name}
                     </td>

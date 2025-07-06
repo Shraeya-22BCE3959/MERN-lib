@@ -26,7 +26,7 @@ const BorrowList = () => {
 
   const fetchData = async () => {
     // setInterval(async () => {
-    const response = await axios.get("http://localhost:5000/borrowedBooks");
+    const response = await axios.get("http://localhost:5003/borrowedBooks");
     setData(response.data);
     // }, 1500);
     console.log(response.data);
@@ -88,46 +88,33 @@ const BorrowList = () => {
     <div
       style={{
         display: "flex",
-        // border: "1px solid grey",
         boxShadow: "1px 1px 21px -3px rgba(0,0,0,10.75)",
         flexDirection: "column",
         justifyContent: "center",
         margin: "1rem",
-        borderRadius: "1.5rem",
+        borderRadius: 0,
         padding: "0.5rem",
+        backgroundColor: "#fff7e6" // keep the current light yellow
       }}
     >
       {data.length > 0 ? (
         <>
-          <div>
-            <img
-              className="vert-move"
-              style={{
-                width: "40%",
-                marginLeft: "30%",
-                // marginRight: "50%",
-                // height: "30%",
-              }}
-              src="https://raw.githubusercontent.com/AnuragRoshan/images/71611a64e2b0acde9f0527b4f2341fabd7bf9555/undraw_process_re_gws7.svg"
-              alt=""
-              srcset=""
-            />
-          </div>
+          {/* Illustration image removed as requested */}
           <div style={{ justifyContent: "center", paddingInlineStart: "5rem" }}>
             <table className="table">
               <thead style={{ backgroundColor: "#3d5a80", color: "white" }}>
-                <th style={{ width: "5rem", textAlign: "left" }}>#</th>
-                <th style={{ width: "15rem", textAlign: "left" }}>Borrower</th>
-                <th style={{ width: "15rem", textAlign: "left" }}>Book Name</th>
-                <th style={{ width: "15rem", textAlign: "left" }}>Author</th>
-                <th style={{ width: "15rem", textAlign: "left" }}>
-                  Due/Borrowed Date
-                </th>
-                <th style={{ width: "15rem", textAlign: "left" }}>Returned</th>
+                <tr>
+                  <th style={{ width: "5rem", textAlign: "left" }}>#</th>
+                  <th style={{ width: "15rem", textAlign: "left" }}>Borrower</th>
+                  <th style={{ width: "15rem", textAlign: "left" }}>Book Name</th>
+                  <th style={{ width: "15rem", textAlign: "left" }}>Author</th>
+                  <th style={{ width: "15rem", textAlign: "left" }}>Due/Borrowed Date</th>
+                  <th style={{ width: "15rem", textAlign: "left" }}>Returned</th>
+                </tr>
               </thead>
               <tbody>
                 {record.map((d, i) => (
-                  <tr>
+                  <tr key={`${d.isbn}-${i}`}>
                     <td style={{}}>{(currentPage - 1) * 10 + i + 1}</td>
                     <td style={{ padding: "0.5rem" }}>{d.borrower}</td>
                     <td style={{ padding: "0.5rem" }}>{d.title}</td>
@@ -204,7 +191,6 @@ const BorrowList = () => {
               </a>
             </div>
             <div style={{ marginLeft: "8.4rem" }}>
-              Save Returned Status of Borrower
             </div>
           </div>
         </>

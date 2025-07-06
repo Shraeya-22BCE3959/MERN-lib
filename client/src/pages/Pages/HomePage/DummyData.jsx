@@ -19,11 +19,11 @@ const DummyData = () => {
             style={{ width: "8rem" }}
             src="https://raw.githubusercontent.com/AnuragRoshan/images/8d4745ca737a0e4a2307509f7d5ebbb994cf7158/undraw_sharing_knowledge_03vp.svg"
             alt=""
-            srcset=""
+            srcSet=""
           />
         </div>
         <div style={{ padding: "1rem", width: "100%", textAlign: "center" }}>
-          <div style={{ fontSize: "4rem", fontWeight: "bolder" }}>42 </div>
+          <div style={{ fontSize: "4rem", fontWeight: "bolder" }}>33 </div>
           <div>Borrowed</div>
         </div>
       </div>
@@ -33,11 +33,11 @@ const DummyData = () => {
             style={{ width: "8rem" }}
             src="https://raw.githubusercontent.com/AnuragRoshan/images/8d4745ca737a0e4a2307509f7d5ebbb994cf7158/undraw_receipt_re_fre3.svg"
             alt=""
-            srcset=""
+            srcSet=""
           />
         </div>
         <div style={{ padding: "1rem", width: "100%", textAlign: "center" }}>
-          <div style={{ fontSize: "4rem", fontWeight: "bolder" }}>16 </div>
+          <div style={{ fontSize: "4rem", fontWeight: "bolder" }}>13 </div>
           <div>Overdues</div>
         </div>
       </div>
@@ -47,11 +47,11 @@ const DummyData = () => {
             style={{ width: "8rem" }}
             src="https://raw.githubusercontent.com/AnuragRoshan/images/8d4745ca737a0e4a2307509f7d5ebbb994cf7158/undraw_new_entries_re_cffr.svg"
             alt=""
-            srcset=""
+            srcSet=""
           />
         </div>
         <div style={{ padding: "1rem", width: "100%", textAlign: "center" }}>
-          <div style={{ fontSize: "4rem", fontWeight: "bolder" }}>148 </div>
+          <div style={{ fontSize: "4rem", fontWeight: "bolder" }}>147 </div>
           <div>New Members</div>
         </div>
       </div>
@@ -66,11 +66,11 @@ const DummyData = () => {
             style={{ width: "8rem" }}
             src="https://raw.githubusercontent.com/AnuragRoshan/images/8d4745ca737a0e4a2307509f7d5ebbb994cf7158/undraw_real_time_analytics_re_yliv.svg"
             alt=""
-            srcset=""
+            srcSet=""
           />
         </div>
         <div style={{ padding: "1rem", width: "100%", textAlign: "center" }}>
-          <div style={{ fontSize: "4rem", fontWeight: "bolder" }}>542 </div>
+          <div style={{ fontSize: "4rem", fontWeight: "bolder" }}>553 </div>
           <div>Visitors</div>
         </div>
       </div>

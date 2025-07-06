@@ -24,7 +24,7 @@ const Lists = ({ user }) => {
     const send = { books: books, username: username };
     console.log(send);
     await axios
-      .post(`http://localhost:5000/addToCart`, send, {})
+      .post(`http://localhost:5003/addToCart`, send, {})
       .then((response) => {
         console.log(response);
       });
@@ -41,9 +41,9 @@ const Lists = ({ user }) => {
       search = "-";
     }
 
-    const response = await axios.get(`http://localhost:5000/search/${search}`);
+    const response = await axios.get(`http://localhost:5003/search/${search}`);
     if (response.length == 0) {
-      response = await axios.get(`http://localhost:5000/allBook`);
+      response = await axios.get(`http://localhost:5003/allBook`);
     }
     setData(response.data.books);
     // }, 1500);
@@ -107,30 +107,17 @@ const Lists = ({ user }) => {
         flexDirection: "column",
         justifyContent: "center",
         margin: "1rem",
-        borderRadius: "1.5rem",
+        borderRadius: 0,
         padding: "0.5rem",
+        backgroundColor: "#fff3e0" // baby orange
       }}
     >
       {data.length > 0 ? (
         <>
-          <div>
-            <img
-              className="vert-move"
-              style={{
-                width: "40%",
-                marginLeft: "30%",
-                // marginRight: "50%",
-                // height: "30%",
-              }}
-              src="https://raw.githubusercontent.com/AnuragRoshan/images/e8666db54a2712302f33449ec4ab8454ec7e1400/undraw_selection_re_ycpo.svg"
-              alt=""
-              srcset=""
-            />
-          </div>
-          <div class="login-field ">
+          <div className="login-field ">
             <input
               type="text"
-              class="login-input"
+              className="login-input"
               placeholder="Search Books"
               name="search"
               style={{ width: "40%", marginInlineStart: "5rem" }}

@@ -25,7 +25,7 @@ const Profile = ({ user }) => {
   const submitForm = async () => {
     // alert("Submitted")
     await axios
-      .post(`http://localhost:5000/updateUser`, data)
+      .post(`http://localhost:5003/updateUser`, data)
       .then((response) => {
         var message = response.data.msg;
         var status = response.status;
@@ -92,7 +92,7 @@ const Profile = ({ user }) => {
                 style={{ width: "15rem" }}
                 src="https://api.multiavatar.com/Starcrasher.png?apikey=dIwKHchoCn6x9k"
                 alt=""
-                srcset=""
+                srcSet=""
               />
             </div>
             <div
@@ -194,8 +194,8 @@ const Profile = ({ user }) => {
             <div
               style={{
                 margin: "1rem",
-                backgroundColor: "white",
-                borderRadius: "2rem",
+                backgroundColor: "#e3f2fd",
+                borderRadius: 0,
                 boxShadow: "1px 1px 21px -3px rgba(0,0,0,10.75)",
               }}
             >
@@ -209,7 +209,7 @@ const Profile = ({ user }) => {
                   fontFamily: "poppins",
                 }}
               >
-                Edit Your Profile
+                Profile Details
               </div>
               <div
                 style={{
@@ -221,7 +221,7 @@ const Profile = ({ user }) => {
                 <input
                   style={{ width: "60%" }}
                   type="text"
-                  class="login-input"
+                  className="login-input"
                   name="name"
                   placeholder="Name"
                   defaultValue={user.name}
@@ -238,7 +238,7 @@ const Profile = ({ user }) => {
                 <input
                   style={{ width: "60%" }}
                   type="email"
-                  class="login-input"
+                  className="login-input"
                   name="username"
                   placeholder="Email"
                   defaultValue={user.username}
@@ -255,7 +255,7 @@ const Profile = ({ user }) => {
                 <input
                   style={{ width: "30%" }}
                   type="number"
-                  class="login-input"
+                  className="login-input"
                   name="phone"
                   defaultValue={user.phone}
                   placeholder="Phone"
@@ -272,7 +272,7 @@ const Profile = ({ user }) => {
                 <input
                   style={{ width: "90%" }}
                   type="text"
-                  class="login-input"
+                  className="login-input"
                   name="address"
                   placeholder="Address"
                   defaultValue={user.address}
@@ -282,46 +282,6 @@ const Profile = ({ user }) => {
                   Update
                 </span>
                 <ToastContainer />
-              </div>
-            </div>
-            <div>
-              <div
-                style={{
-                  margin: "1rem",
-                  backgroundColor: "white",
-                  borderRadius: "2rem",
-                  boxShadow: "1px 1px 21px -3px rgba(0,0,0,10.75)",
-                }}
-              >
-                <div
-                  style={{
-                    margin: "0.5rem",
-                    display: "flex",
-                    padding: "1rem 0 0 1rem",
-                    fontSize: "2rem",
-                    fontWeight: "600",
-                    fontFamily: "poppins",
-                  }}
-                >
-                  Any Query Or Feedbak ?
-                </div>
-                <div
-                  style={{
-                    margin: "0.5rem",
-                    display: "flex",
-                    padding: "0.5rem",
-                  }}
-                >
-                  <textarea
-                    style={{ width: "100%", fontFamily: "poppins" }}
-                    type="text"
-                    class="login-input"
-                    name="query"
-                    placeholder="Write Something ..."
-                    defaultValue="I like to suggest You ....."
-                    rows={6}
-                  />
-                </div>
               </div>
             </div>
           </div>
